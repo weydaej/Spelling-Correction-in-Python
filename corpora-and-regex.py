@@ -32,16 +32,21 @@ x = nltk.data.load('big.txt', format='text')
 # print(wnl.lemmatize('monsters'))
 
 '''
-In each of the above cases we have handled one word. Now print the stemmed and lemmatised versions of all the words in the document  computerscience.txtPreview the document. Here is an overview of what you need to do: 
-
-1. Load the file into a reader [ Hint: reader = WordListCorpusReader( ... ) ]
-2. use word_tokenize from nltk.tokenize to convert the text into words
-3. Loop through the text [Hint: Use the forLinks to an external site. statement]
-4. Lemmatise and Stem each word.
-5. Look at the difference between the two, notice how the lemmatiser makes mistakes in some cases - can you identify why and propose a solution?
+In each of the above cases we have handled one word. 
+Now print the stemmed and lemmatized versions of all the words in the document computerscience.txt
+Preview the document. Here is an overview of what you need to do: 
+    1. Load the file into a reader [ Hint: reader = WordListCorpusReader( ... ) ]
+    2. use word_tokenize from nltk.tokenize to convert the text into words
+    3. Loop through the text [Hint: Use the forLinks to an external site. statement]
+    4. Lemmatize and Stem each word.
+    5. Look at the difference between the two, notice how the lemmatizer makes mistakes in some cases - can you identify why and propose a solution?
 '''
 
 from nltk.corpus.reader import WordListCorpusReader
+tokens = []
 reader = WordListCorpusReader('./', ['computerscience.txt'])
 for count, ele in enumerate(reader.words()):
     print(count, "\b:", ele, "\n")
+    tokens += nltk.word_tokenize(ele)
+
+print(tokens)
