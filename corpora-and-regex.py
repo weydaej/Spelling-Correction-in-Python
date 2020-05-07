@@ -37,7 +37,7 @@ Now print the stemmed and lemmatized versions of all the words in the document c
 Preview the document. Here is an overview of what you need to do: 
     1. Load the file into a reader [ Hint: reader = WordListCorpusReader( ... ) ]
     2. use word_tokenize from nltk.tokenize to convert the text into words
-    3. Loop through the text [Hint: Use the forLinks to an external site. statement]
+    3. Loop through the text [Hint: Use the for statement]
     4. Lemmatize and Stem each word.
     5. Look at the difference between the two, notice how the lemmatizer makes mistakes in some cases - can you identify why and propose a solution?
 '''
@@ -50,3 +50,11 @@ for count, ele in enumerate(reader.words()):
     tokens += nltk.word_tokenize(ele)
 
 print(tokens)
+from nltk.stem.porter import *
+stemmer = PorterStemmer()
+from nltk.stem import WordNetLemmatizer
+wnl = WordNetLemmatizer()
+for token in tokens:
+    print(token)
+    print(wnl.lemmatize(token))
+    print(stemmer.stem(token))
