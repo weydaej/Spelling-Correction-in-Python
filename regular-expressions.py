@@ -40,3 +40,8 @@
 
 import re
 
+# 16/12/2016
+
+regex = r"^\d{1,2}\/\d{1,2}\/\d{4}$"
+print(re.findall(regex, "16/12/2016"))
+print(re.findall(regex, "31/1/1996"))
