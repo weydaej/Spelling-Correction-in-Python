@@ -40,3 +40,5 @@ def backoff_tagger(train_sents, tagger_classes, backoff=None):
 tagger = backoff_tagger(train_sents, [UnigramTagger, BigramTagger, TrigramTagger], backoff=DefaultTagger('NN'))
 print(tagger.evaluate(test_sents))
 # this hits 88% accuracy
+
+# try TnT tagger next: http://www.coli.uni-saarland.de/~thorsten/tnt/
