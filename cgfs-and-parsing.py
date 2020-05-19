@@ -16,3 +16,9 @@ sent = "Mary saw Bob".split()
 rd_parser = nltk.RecursiveDescentParser(grammar1)
 for tree in rd_parser.parse(sent):
     print(tree)
+
+# Parsing
+sr_parser = nltk.ShiftReduceParser(grammar1)
+sent = "Mary saw a dog".split()
+for tree in sr_parser.parse(sent):
+    tree.draw()
