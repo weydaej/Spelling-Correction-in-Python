@@ -1,4 +1,9 @@
-import sys, http.client, urllib.request, urllib.parse, urllib.error, json
+import sys
+import http.client
+import urllib.request
+import urllib.parse
+import urllib.error
+import json
 from pprint import pprint
 
 def get_url( domain, url ) :
